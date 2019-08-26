@@ -29,9 +29,7 @@ public class SNSController {
     @Value("${sns.topic.ARN}")
     private String snsTopicDemoARN;
 
-
-
-
+    
     @RequestMapping(value = "/sendMessageQueue", method = RequestMethod.POST)
     public @ResponseBody
     void write(@RequestBody String notificationData) {
