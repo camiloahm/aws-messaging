@@ -26,6 +26,9 @@ public class QueueOneListener {
     @SqsListener(value = "${sqs.name}", deletionPolicy = SqsMessageDeletionPolicy.NEVER)
     public void listen(Acknowledgment acknowledgment, String message, String messageId) {
         log.info("Queue One message received message : {}, messageId: {} ", message, messageId);
+        if (message.contains("bla")) {
+            throw new RuntimeException();
+        }
         oneService.handle(message);
         try {
             acknowledgment.acknowledge().get();

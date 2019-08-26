@@ -1,6 +1,6 @@
 sns:
   topic:
-    ARN: 
+    ARN: arn:aws:sns:eu-central-1:126333195900:order-states
 sqs:
   name: order-dispathed
 
